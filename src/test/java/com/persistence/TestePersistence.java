@@ -11,7 +11,7 @@ import org.hibernate.annotations.GenericGenerator;
  * @author Leonardo
  */
 @Entity
-@Table(name = "EVENTS")
+@Table(name = "test")
 public class TestePersistence {
 
     private Long id;

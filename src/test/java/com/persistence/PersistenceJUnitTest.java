@@ -1,16 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.persistence;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  *
@@ -18,30 +13,22 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class PersistenceJUnitTest {
     
+    private EntityManagerFactory entityManagerFactory;
+    
     public PersistenceJUnitTest() {
     }
     
-    @BeforeAll
-    public static void setUpClass() {
+    @Before
+    public void setUp() throws Exception {
+        entityManagerFactory = Persistence.createEntityManagerFactory( "com.lol.pu" );
     }
     
-    @AfterAll
-    public static void tearDownClass() {
-    }
-    
-    @BeforeEach
-    public void setUp() {
-    }
-    
-    @AfterEach
-    public void tearDown() {
-    }
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
+    @After
+    public void tearDown() throws Exception {
+        entityManagerFactory.close();
+    }  
     @Test
-    public void connect() {
-        
+    public void testBasicUsage() {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
     }
 }
