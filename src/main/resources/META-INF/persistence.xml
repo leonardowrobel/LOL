@@ -7,7 +7,7 @@
     <!-- Define Persistence Unit -->
     <persistence-unit name="com.lol.pu">
         
-        <class>org.hibernate.tutorial.em.TestePersistence</class>
+        <class>com.persistence.TestePersistence</class>
         
         <!--<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>-->
         <properties>

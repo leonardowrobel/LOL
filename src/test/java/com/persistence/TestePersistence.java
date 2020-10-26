@@ -11,7 +11,7 @@ import org.hibernate.annotations.GenericGenerator;
  * @author Leonardo
  */
 @Entity
-@Table(name = "test")
+@Table(name = "teste")
 public class TestePersistence {
 
     private Long id;
@@ -25,6 +25,11 @@ public class TestePersistence {
         this.title = title;
     }    
 
+    public TestePersistence(String title) {
+        this.title = title;
+    }
+    
+    
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
